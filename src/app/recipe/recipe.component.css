@@ -1,0 +1,12 @@
+#recipe {
+    font-size: 1.3em;
+    font-weight: 400;
+}
+#recipe-list {
+    /*background-color: #D6F0FF;*/
+    min-height: 500px;
+}
+
+#recipe-detail {
+    min-height: 500px;
+}
