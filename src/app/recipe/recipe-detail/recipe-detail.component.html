@@ -1,0 +1,26 @@
+<div id="details" class="row">
+  <img src="{{mainImagePath}}" alt="major image" class="img-responsive center-block main-img">
+  <h1 class="text-center">{{selectedRecipe?.title}}</h1>
+  <!--<div id="nav-tab" class="col-xs-12">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#">Summary</a></li>
+      <li role="presentation"><a href="#">Ingredients</a></li>
+      <li role="presentation"><a href="#">Steps</a></li>
+      <li role="presentation"><a href="#">Images</a></li>
+    </ul>
+  </div>-->
+  <div id="recipe-detail-info" class="col-xs-12 underlined">
+    <div id="tags" class="col-xs-8">{{selectedRecipe?.tags}}</div>
+    <div id="difficulity" class="col-xs-2">Easy</div>
+    <div id="time" class="col-xs-2">&#9200; {{selectedRecipe?.time}}</div>
+  </div>
+  <div id="ingredients" class="col-xs-12 underlined">
+    <h4 class="col-xs-4" id="ing-title">Ingredients</h4>
+    <button id="add" class="col-xs-2 col-xs-push-6">Add to Shopping List</button>
+    <p *ngFor="let item of selectedRecipe?.ingredients" class="col-xs-12">{{item.name}}, {{item.amount}}</p>
+  </div>
+  <div id="direction" class="col-xs-12 underlined">
+    <h4>Direction</h4>
+    <p *ngFor="let item of selectedRecipe?.steps" class="col-xs-12">{{item}}</p>
+  </div>
+</div>

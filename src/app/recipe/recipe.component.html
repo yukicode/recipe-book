@@ -1,8 +1,8 @@
 <section id="recipe row">
   <div id="recipe-list" class="col-sm-4">
-    <app-recipe-list></app-recipe-list>
+    <app-recipe-list (recipeSelected) = "onSelect($event)"></app-recipe-list>
   </div>
   <div id="recipe-detail" class="col-sm-8">
-    <app-recipe-detail></app-recipe-detail>
+    <app-recipe-detail [selectedRecipe]="selectedRecipe"></app-recipe-detail>
   </div>
 </section>

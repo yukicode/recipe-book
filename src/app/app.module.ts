@@ -8,9 +8,10 @@ import { HeaderComponent } from './header.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { Ingredient } from './ingredient';
 import { Recipe } from './recipe';
-import { RecipeListComponent } from './recipe-list/recipe-list.component';
-import { RecipeItemComponent } from './recipe-list/recipe-item.component';
-import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
+import { RecipeItemComponent } from './recipe/recipe-list/recipe-item.component';
+import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
+import { DropdownDirective } from './dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
     RecipeListComponent,
     RecipeItemComponent,
     RecipeItemComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
