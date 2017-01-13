@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Recipe } from "../../recipe";
+import {ShoppingListService} from '../../services/shopping-list.service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -9,6 +10,9 @@ import { Recipe } from "../../recipe";
 export class RecipeDetailComponent{
   private _selectedRecipe: Recipe;
   mainImagePath: string= "http://placehold.it/1240x250";
+
+  constructor (private shoppingListService: ShoppingListService){}
+
   @Input() set selectedRecipe(r: Recipe){
     this._selectedRecipe = r;
     if(r){
@@ -17,4 +21,8 @@ export class RecipeDetailComponent{
   }
   get selectedRecipe(): Recipe {return this._selectedRecipe;}
 
+  addToList() : void {
+    if(!this._selectedRecipe){ return;}
+    this.shoppingListService.addToList(this._selectedRecipe.ingredients);
+  }
 }

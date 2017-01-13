@@ -16,7 +16,7 @@
   </div>
   <div id="ingredients" class="col-xs-12 underlined">
     <h4 class="col-xs-4" id="ing-title">Ingredients</h4>
-    <button id="add" class="col-xs-2 col-xs-push-6">Add to Shopping List</button>
+    <button id="add" class="col-xs-2 col-xs-push-6" (click)="addToList()">Add to Shopping List</button>
     <p *ngFor="let item of selectedRecipe?.ingredients" class="col-xs-12">{{item.name}}, {{item.amount}}</p>
   </div>
   <div id="direction" class="col-xs-12 underlined">
