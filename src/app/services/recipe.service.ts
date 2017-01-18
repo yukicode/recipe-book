@@ -4,17 +4,12 @@ import { Recipe } from '../recipe';
 
 @Injectable()
 export class RecipeService {
-  allRecipes: Recipe[] = RECIPES;
 
-  getRecipes(): Recipe[] {
-    return this.allRecipes;
+  getRecipes(): Promise<Recipe[]> {
+    return Promise.resolve(RECIPES);
   }
-  getSelectedRecipe(id: string): Recipe {
-    this.allRecipes.forEach(r => {
-      if (r.id === id) {
-        return r;
-      }
-    });
-    return new Recipe("", "", "", "", [], [], [], []);
+
+  getSelectedRecipe(id: string): Promise<Recipe> {
+    return this.getRecipes().then(recipes => recipes.find(recipe => recipe.id === id));
   }
 }
