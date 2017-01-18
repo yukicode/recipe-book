@@ -38,8 +38,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
-    RecipeRoutingModule
+    RecipeRoutingModule,
+    AppRoutingModule
   ],
   providers: [
     ShoppingListService,
