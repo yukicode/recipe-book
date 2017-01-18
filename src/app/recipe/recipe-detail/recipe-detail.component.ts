@@ -1,28 +1,38 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import 'rxjs/add/operator/switchMap';
+
 import { Recipe } from "../../recipe";
-import {ShoppingListService} from '../../services/shopping-list.service';
+import { ShoppingListService } from '../../services/shopping-list.service';
+import { RecipeService } from '../../services/recipe.service';
 
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
   styleUrls: ['./recipe-detail.component.css']
 })
-export class RecipeDetailComponent{
-  private _selectedRecipe: Recipe;
-  mainImagePath: string= "http://placehold.it/1240x250";
+export class RecipeDetailComponent implements OnInit {
+  selectedRecipe: Recipe;
+  mainImagePath: string = "http://placehold.it/1240x250";
 
-  constructor (private shoppingListService: ShoppingListService){}
+  constructor(
+    private shoppingListService: ShoppingListService,
+    private recipeService: RecipeService,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
-  @Input() set selectedRecipe(r: Recipe){
-    this._selectedRecipe = r;
-    if(r){
-      this.mainImagePath = r.imagePaths[0]? r.imagePaths[0] : "http://placehold.it/1240x250";
-    }
+  addToList(): void {
+    if (!this.selectedRecipe) { return; }
+    this.shoppingListService.addToList(this.selectedRecipe.ingredients);
   }
-  get selectedRecipe(): Recipe {return this._selectedRecipe;}
 
-  addToList() : void {
-    if(!this._selectedRecipe){ return;}
-    this.shoppingListService.addToList(this._selectedRecipe.ingredients);
+  ngOnInit(): void {
+    this.activatedRoute.params
+      .switchMap((params: Params) => this.recipeService.getSelectedRecipe(params['id']))
+      .subscribe(recipe => this.selectedRecipe = recipe);
+
+    if (this.selectedRecipe) {
+      this.mainImagePath = this.selectedRecipe.imagePaths[0] ? this.selectedRecipe.imagePaths[0] : "http://placehold.it/1240x250";
+    }
   }
 }
