@@ -29,10 +29,9 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params
       .switchMap((params: Params) => this.recipeService.getSelectedRecipe(params['id']))
-      .subscribe(recipe => this.selectedRecipe = recipe);
-
-    if (this.selectedRecipe) {
-      this.mainImagePath = this.selectedRecipe.imagePaths[0] ? this.selectedRecipe.imagePaths[0] : "http://placehold.it/1240x250";
-    }
+      .subscribe(recipe => {
+        this.selectedRecipe = recipe;
+        this.mainImagePath = this.selectedRecipe.imagePaths[0] ? this.selectedRecipe.imagePaths[0] : "http://placehold.it/1240x250";
+      });
   }
 }
