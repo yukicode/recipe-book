@@ -25,7 +25,7 @@ export class RecipeDetailComponent implements OnInit {
 
   addAllToList(): void {
     if (!this.selectedRecipe) { return; }
-    this.shoppingListService.addToList(this.selectedRecipe.ingredients);
+    this.shoppingListService.addToList(this.selectedRecipe.ingredients, this.selectedRecipe.title);
   }
 
   addSelectedToList(): void {
@@ -36,7 +36,7 @@ export class RecipeDetailComponent implements OnInit {
         temp.push(this.selectedRecipe.ingredients[i]);
       }
     }
-    this.shoppingListService.addToList(temp);
+    this.shoppingListService.addToList(temp, this.selectedRecipe.title);
   }
 
   toggleSelect(i: number): void {
