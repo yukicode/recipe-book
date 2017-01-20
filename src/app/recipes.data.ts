@@ -1,12 +1,14 @@
-import {Recipe} from './recipe';
-import {Ingredient} from './ingredient';
+import { Recipe } from './recipe';
+import { Ingredient } from './ingredient';
 
 var recipeData = [
     {
         id: "001",
         title: "Dumplings",
         description: "Tasty omemade pork dumplings",
-        time: "60 minutes",
+        prepTime: "30 minutes",
+        cookTime: "30 minutes",
+        serving: "4",
         tags: ["meat", "pork", "dumpling", "Asian"],
         ingredients: [
             new Ingredient("ground pork", "2 lb"),
@@ -30,12 +32,14 @@ var recipeData = [
         imagePaths: [
             "http://recipefreak.co.uk/wp-content/uploads/2014/03/chineseDumplings1.jpg"
         ]
-    }, 
-    {   
+    },
+    {
         id: "002",
         title: "Chia Pudding",
         description: "Serves 2-ish, maybe 1 if it’s Matt. Hard to know, since Tracy and Kainoa are the only currently known test subjects.",
-        time: "30 minutes",
+        prepTime: "15 minutes",
+        cookTime: "12 hours",
+        serving: "2",
         tags: ["diary", "vegetarian"],
         ingredients: [
             new Ingredient("chia seed", "1/4 cup"),
@@ -53,12 +57,14 @@ var recipeData = [
 ]
 
 var recipes = [];
-for(var i=0; i<recipeData.length; i++){
+for (var i = 0; i < recipeData.length; i++) {
     var temp = new Recipe(
         recipeData[i].id,
         recipeData[i].title,
         recipeData[i].description,
-        recipeData[i].time,
+        recipeData[i].prepTime,
+        recipeData[i].cookTime,
+        recipeData[i].serving,
         recipeData[i].tags,
         recipeData[i].ingredients,
         recipeData[i].steps,
@@ -67,4 +73,4 @@ for(var i=0; i<recipeData.length; i++){
     recipes[i] = temp;
 }
 
-export const RECIPES: Recipe[]= recipes;
+export const RECIPES: Recipe[] = recipes;

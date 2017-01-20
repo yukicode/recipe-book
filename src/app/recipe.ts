@@ -4,7 +4,9 @@ export class Recipe{
     id: string;
     title: string;
     description: string;
-    time: string;
+    prepTime: string;
+    cookTime: string;
+    serving: string;
     tags: string[];
     ingredients: Ingredient[];
     steps: string[];
@@ -14,7 +16,9 @@ export class Recipe{
         id: string,
         title: string,
         description: string,
-        time: string,
+        prepTime: string,
+        cookTime: string,
+        serving: string,
         tags: string[],
         ingredients: Ingredient[],
         steps: string[],
@@ -22,11 +26,13 @@ export class Recipe{
     ){
         this.id = id;
         this.title = title;
-        this.description = description;
-        this.time = time;
-        this.tags = tags;
-        this.ingredients = ingredients;
-        this.steps = steps;
-        this.imagePaths = imagePaths;
+        this.description = description || "";
+        this.prepTime = prepTime || "";
+        this.cookTime = cookTime || "";
+        this.serving = serving || "";
+        this.tags = tags || [];
+        this.ingredients = ingredients || [];
+        this.steps = steps || [];
+        this.imagePaths = imagePaths || [];
     }
 }
