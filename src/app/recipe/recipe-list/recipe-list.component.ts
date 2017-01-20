@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
 import { Recipe } from '../../recipe';
 import {RecipeService} from '../../services/recipe.service';
 
