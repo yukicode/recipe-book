@@ -12,10 +12,10 @@ ul{
 }
 
 .icon {
-    display: inline-block;
     color: silver;
     transition: transform 0.1s ease-out;
     transform: scale(1, 1);
+    cursor: pointer;
 }
 
 .icon:hover {
