@@ -38,4 +38,8 @@ export class ShoppingListService {
   addIngredient(s: string): void{
     this._ingredientString.push(s);
   }
+
+  deleteAllIngredients(): void{
+    this._ingredientString = [];
+  }
 }

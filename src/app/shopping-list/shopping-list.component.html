@@ -6,7 +6,7 @@
         <span class="icon" (click)=edit(i) [ngClass]="{'editing' : isEditing[i]}">&#9998;</span>
         <span class="icon" (click)=delete(i)><b>X</b></span>
         <span [hidden]="isEditing[i]">{{item}}</span>
-        <input autofocus [hidden]="!isEditing[i]" type="text" [ngModel]=item (blur)="onBlur($event, i)">
+        <input [autofocus]="isEditing[i]" [hidden]="!isEditing[i]" type="text" [ngModel]=item (blur)="onBlur($event, i)">
       </li>
     </ul>
 
@@ -14,7 +14,7 @@
       <div class="btn-group">
         <button type="button" class="btn btn-default">Print</button>
         <button type="button" class="btn btn-default" (click)="addItemActivate()">Add Item</button>
-        <button type="button" class="btn btn-default">Delete All</button>
+        <button type="button" class="btn btn-default" (click)="deleteAllIngredients()">Delete All</button>
       </div>
     </div>
   </div>

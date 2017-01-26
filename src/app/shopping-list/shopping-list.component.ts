@@ -57,4 +57,10 @@ export class ShoppingListComponent implements OnInit{
     this.shoppingListService.addIngredient("");
     this.isEditing[this.items.length-1] = true;
   }
+
+  deleteAllIngredients(){
+    this.shoppingListService.deleteAllIngredients();
+    this.items = this.shoppingListService.getListString();
+    this.isEditing = [];
+  }
 }
