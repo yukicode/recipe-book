@@ -31,7 +31,11 @@ export class ShoppingListService {
     this._ingredientString.splice(i, 1);
   }
 
-  changeIngredient(s: string, i: number){
+  changeIngredient(s: string, i: number): void{
     this._ingredientString[i] = s;
+  }
+
+  addIngredient(s: string): void{
+    this._ingredientString.push(s);
   }
 }

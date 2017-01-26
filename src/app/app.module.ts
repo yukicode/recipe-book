@@ -20,6 +20,7 @@ import { RecipeService } from './services/recipe.service';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { RecipeRoutingModule } from './routing/recipe-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { InputFocusDirective } from './directives/input-focus.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RecipeDetailComponent,
     DropdownDirective,
     ShoppingListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    InputFocusDirective
   ],
   imports: [
     BrowserModule,

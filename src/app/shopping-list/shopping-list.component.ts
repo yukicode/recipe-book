@@ -7,11 +7,13 @@ import { ShoppingListService } from '../services/shopping-list.service';
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css']
 })
-export class ShoppingListComponent implements OnInit {
+export class ShoppingListComponent implements OnInit{
   items: string[];
   isEditing: boolean[] = [];
 
-  constructor(private shoppingListService: ShoppingListService) { }
+  constructor(
+    private shoppingListService: ShoppingListService
+    ) { }
 
   ngOnInit() {
     this.items = this.shoppingListService.getListString();
@@ -49,5 +51,10 @@ export class ShoppingListComponent implements OnInit {
   onBlur(event: any, i: number){
     this.shoppingListService.changeIngredient(event.target.value, i);
     this.isEditing[i] = false;
+  }
+
+  addItemActivate(){
+    this.shoppingListService.addIngredient("");
+    this.isEditing[this.items.length-1] = true;
   }
 }
