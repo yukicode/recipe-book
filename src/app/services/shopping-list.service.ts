@@ -30,4 +30,8 @@ export class ShoppingListService {
   deleteIngredient(i: number): void{
     this._ingredientString.splice(i, 1);
   }
+
+  changeIngredient(s: string, i: number){
+    this._ingredientString[i] = s;
+  }
 }

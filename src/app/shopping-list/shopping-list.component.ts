@@ -44,12 +44,10 @@ export class ShoppingListComponent implements OnInit {
 
   save(i: number): void {
     this.isEditing[i] = false;
-    return;
   }
 
-  getName(i:string): string {
-    console.log("called");
-    return "called";
+  onBlur(event: any, i: number){
+    this.shoppingListService.changeIngredient(event.target.value, i);
+    this.isEditing[i] = false;
   }
-
 }

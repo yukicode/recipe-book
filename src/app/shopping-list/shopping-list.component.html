@@ -3,11 +3,10 @@
     <h3 class="text-center">Shopping List</h3>
     <ul class="col-xs-8 col-xs-push-2">
       <li *ngFor="let item of items; let i = index;" class="item-list col-xs-12">
-        <span class="icon" (click)=edit(i) [hidden]="isEditing[i]">&#9998;</span>
-        <span class="icon" (click)=save(i) [hidden]="!isEditing[i]">&#10004;</span>
-        <span class="icon" (click)=delete(i)><b>X</b></span> 
+        <span class="icon" (click)=edit(i) [ngClass]="{'editing' : isEditing[i]}">&#9998;</span>
+        <span class="icon" (click)=delete(i)><b>X</b></span>
         <span [hidden]="isEditing[i]">{{item}}</span>
-          <input [hidden]="!isEditing[i]" type="text" [ngModel]=item #getName(i)>
+        <input [hidden]="!isEditing[i]" type="text" [ngModel]=item (blur)="onBlur($event, i)">
       </li>
     </ul>
     <div class="text-center col-xs-12">
