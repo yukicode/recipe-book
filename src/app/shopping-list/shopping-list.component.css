@@ -26,3 +26,7 @@ ul{
 .editing {
     color: black;
 }
+
+@media print {
+    .print-hide { display: none; }
+} 

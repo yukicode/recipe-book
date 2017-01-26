@@ -53,14 +53,18 @@ export class ShoppingListComponent implements OnInit{
     this.isEditing[i] = false;
   }
 
-  addItemActivate(){
+  addItemActivate(): void{
     this.shoppingListService.addIngredient("");
     this.isEditing[this.items.length-1] = true;
   }
 
-  deleteAllIngredients(){
+  deleteAllIngredients(): void{
     this.shoppingListService.deleteAllIngredients();
     this.items = this.shoppingListService.getListString();
     this.isEditing = [];
+  }
+
+  print(): void{
+    window.print();
   }
 }
