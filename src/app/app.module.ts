@@ -22,6 +22,7 @@ import { RecipeRoutingModule } from './routing/recipe-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { InputFocusDirective } from './directives/input-focus.directive';
 import { LoginComponent } from './user/login.component';
+import { SignupComponent } from './user/signup.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoginComponent } from './user/login.component';
     ShoppingListComponent,
     PageNotFoundComponent,
     InputFocusDirective,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { ShoppingListComponent } from '../shopping-list/shopping-list.component'
 import { RecipeComponent } from '../recipe/recipe.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { LoginComponent } from '../user/login.component';
+import { SignupComponent } from '../user/signup.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
     { path: 'recipe', component: RecipeComponent },
     { path: 'shoppinglist', component: ShoppingListComponent },
     { path: 'login', component: LoginComponent},
+    { path: 'signup', component: SignupComponent},
     { path: '**', component: PageNotFoundComponent }
 ];
 
