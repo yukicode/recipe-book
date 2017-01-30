@@ -23,6 +23,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { InputFocusDirective } from './directives/input-focus.directive';
 import { LoginComponent } from './user/login.component';
 import { SignupComponent } from './user/signup.component';
+import { CreateRecipeComponent } from './create-recipe/create-recipe.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SignupComponent } from './user/signup.component';
     PageNotFoundComponent,
     InputFocusDirective,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CreateRecipeComponent
   ],
   imports: [
     BrowserModule,

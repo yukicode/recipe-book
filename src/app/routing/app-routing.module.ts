@@ -5,14 +5,15 @@ import { RecipeComponent } from '../recipe/recipe.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { LoginComponent } from '../user/login.component';
 import { SignupComponent } from '../user/signup.component';
-
+import { CreateRecipeComponent } from '../create-recipe/create-recipe.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/recipe', pathMatch: 'full' },
     { path: 'recipe', component: RecipeComponent },
     { path: 'shoppinglist', component: ShoppingListComponent },
-    { path: 'login', component: LoginComponent},
-    { path: 'signup', component: SignupComponent},
+    { path: 'login', component: LoginComponent },
+    { path: 'signup', component: SignupComponent },
+    { path: 'create-recipe', component: CreateRecipeComponent},
     { path: '**', component: PageNotFoundComponent }
 ];
 
