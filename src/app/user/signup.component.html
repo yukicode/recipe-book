@@ -1,6 +1,6 @@
 <div class="container" id="signup">
   <div class="row">
-    <form #f=ngForm>
+    <form #f=ngForm (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="username">User Name <span class="red">*</span></label>
         <input type="text" name="username" class="form-control" ngModel required>        
