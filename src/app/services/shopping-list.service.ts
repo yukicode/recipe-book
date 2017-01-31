@@ -23,7 +23,7 @@ export class ShoppingListService {
 
     this._ingredientString.push(recipeName);
     for(var i=0; i<items.length; i++){
-      this._ingredientString.push("✤    " + this._ingredients[i].name + ", " + this._ingredients[i].amount);
+      this._ingredientString.push("✤    " + this._ingredients[i].name + ", " + this._ingredients[i].amount + " " + this._ingredients[i].unit);
     }
   }
 

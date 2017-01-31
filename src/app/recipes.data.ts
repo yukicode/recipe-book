@@ -3,7 +3,6 @@ import { Ingredient } from './ingredient';
 
 var recipeData = [
     {
-        id: "001",
         title: "Dumplings",
         description: "Tasty omemade pork dumplings",
         prepTime: "30 minutes",
@@ -11,17 +10,16 @@ var recipeData = [
         serving: "4",
         tags: ["meat", "pork", "dumpling", "Asian"],
         ingredients: [
-            new Ingredient("ground pork", "2 lb"),
-            new Ingredient("green garlic", "1 bundle"),
-            new Ingredient("egg", "1"),
-            new Ingredient("salt", "to taste"),
-            new Ingredient("dark soy sauce", "2 tbsp"),
-            new Ingredient("light soy sauce", "4 tbsp"),
-            new Ingredient("white wine/Vodka", "1 tbsp"),
-            new Ingredient("dumpling skin", "2 packages"),
-            new Ingredient("white wine/Vodka", "1 tbsp"),
-            new Ingredient("Olive oil", "3 tbsp"),
-            new Ingredient("Dumpling dipping sauce", "1 bottle"),
+            new Ingredient("ground pork", 2, "lb"),
+            new Ingredient("green garlic", 1, "bundle"),
+            new Ingredient("egg", 1),
+            new Ingredient("salt", 0 ,"to taste"),
+            new Ingredient("dark soy sauce", 2, "tbsp"),
+            new Ingredient("light soy sauce", 4, "tbsp"),
+            new Ingredient("white wine/Vodka", 1, "tbsp"),
+            new Ingredient("dumpling skin", 2, "packages"),
+            new Ingredient("Olive oil", 3, "tbsp"),
+            new Ingredient("Dumpling dipping sauce", 1, "bottle"),
         ],
         steps: [
             "Making dumplings: In a big mixing bowl, add ground pork and an egg. Dice green garlic and add it to the mixing bowl. Add 1-2 tbsp of dark soy sauce,  2-4 tbsp of light soy sauce, 1 tbsp of alcohol and add salt to taste. Mix everything in the bowl. Wrap the fillings in the dumpling skin.",
@@ -34,7 +32,6 @@ var recipeData = [
         ]
     },
     {
-        id: "002",
         title: "Chia Pudding",
         description: "Serves 2-ish, maybe 1 if it’s Matt. Hard to know, since Tracy and Kainoa are the only currently known test subjects.",
         prepTime: "15 minutes",
@@ -42,9 +39,9 @@ var recipeData = [
         serving: "2",
         tags: ["diary", "vegetarian"],
         ingredients: [
-            new Ingredient("chia seed", "1/4 cup"),
-            new Ingredient("milk", "1 cup"),
-            new Ingredient("Honey/Taro flavor", "to taste")
+            new Ingredient("chia seed", 0.25, "cup"),
+            new Ingredient("milk", 1, "cup"),
+            new Ingredient("Honey/Taro flavor", 0,"to taste")
         ],
         steps: [
             "Put chia seeds and milk in a sealable container, stir or shake and let sit in the fridge overnight.",
@@ -59,7 +56,6 @@ var recipeData = [
 var recipes = [];
 for (var i = 0; i < recipeData.length; i++) {
     var temp = new Recipe(
-        recipeData[i].id,
         recipeData[i].title,
         recipeData[i].description,
         recipeData[i].prepTime,
